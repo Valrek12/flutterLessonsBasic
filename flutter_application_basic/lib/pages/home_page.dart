@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -20,16 +21,30 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return Scaffold(
-      body: ListView(
+      body: Stack(
         children: <Widget>[
-          Container(
-            width: 150,
-            height: 150,
-            decoration: BoxDecoration(
-                color: color,
-                border: Border.all(color: Colors.black, width: 5.0),
-                borderRadius: BorderRadius.all(Radius.circular(20.0))),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Container(
+                width: 150,
+                height: 150,
+                decoration: BoxDecoration(
+                    color: color,
+                    border: Border.all(color: Colors.black, width: 5.0),
+                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
+              ),
+              Container(
+                width: 150,
+                height: 150,
+                decoration: BoxDecoration(
+                    color: color,
+                    border: Border.all(color: Colors.black, width: 5.0),
+                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
+              ),
+            ],
           ),
           Center(
             child: ElevatedButton(
